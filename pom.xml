@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.cdy</groupId>
+    <artifactId>bookStoreSystem</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 配置springboot父级项目 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- pom属性参数配置 -->
+    <properties>
+        <!-- pom.xml首行报错要加这一行 -->
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+        <mybatis-spring-boot>1.2.0</mybatis-spring-boot>
+        <mysql-connector-java-version>8.0.11</mysql-connector-java-version>
+    </properties>
+
+    <!-- 配置springboot项目的相关依赖 -->
+    <dependencies>
+        <!-- spring boot 启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <!-- 添加thymeleaf支持：类似于jsp的视图模板 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <!-- spring boot 热部署 class文件修改之后会自动启动 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>2.6.2</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- spring boot mybatis 依赖 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-spring-boot}</version>
+        </dependency>
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java-version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,6 @@
+1 entity 添加实体类
+2 mapper java文件添加方法
+3 mapper 映射文件添加sql语句
+4 service类添加调用方法
+5 serviceImpl类添加具体实现
+6 controller类添加具体控制

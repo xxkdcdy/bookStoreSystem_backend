@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>商品查询</title>
+    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+<body>
+    <table class="table_list">
+        <tr class="title">
+            <th>商品编号</th>
+            <th>图片</th>
+            <th>商品名称</th>
+            <th>价格</th>
+            <th>发行地</th>
+            <th>发行日期</th>
+            <th>分类</th>
+            <th>操作</th>
+        </tr>
+        <th:block th:each="g:${goodsList}">
+            <tr>
+                <td th:text="${g.goodsId}"></td>
+                <td>
+                    <img th:src="${g.picture}" width="50" height="80"/>
+                </td>
+                <td th:text="${g.goodsName}"></td>
+                <td th:text="${g.price}"></td>
+                <td th:text="${g.address}"></td>
+                <td th:text="${#dates.format(g.pressDate, 'yyyy-MM-dd')}"></td>
+                <td th:text="${g.category.categoryName}"></td>
+                <td>
+                    <a th:href="@{/admin/goods/update_show(goodsId=${g.goodsId})}">修改</a>
+                </td>
+            </tr>
+        </th:block>
+        <tr>
+            <td colspan="8">
+                <a href="/admin/goods/add_show">添加商品</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
